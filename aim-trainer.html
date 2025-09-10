@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim Trainer - Mouse Pull Challenge</title>
+    <link rel="stylesheet" href="aim-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1 class="game-title">AIM TRAINER</h1>
+            <p class="game-subtitle">Mouse Pull Challenge</p>
+        </header>
+
+        <!-- Game Stats -->
+        <div class="stats-panel">
+            <div class="stat-item">
+                <span class="stat-label">Score:</span>
+                <span class="stat-value" id="score">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Accuracy:</span>
+                <span class="stat-value" id="accuracy">0%</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Time:</span>
+                <span class="stat-value" id="time">60</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Targets Hit:</span>
+                <span class="stat-value" id="hits">0</span>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div class="game-area">
+            <canvas id="gameCanvas" width="1200" height="600"></canvas>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="controls-panel">
+            <div class="difficulty-selector">
+                <h3>Difficulty</h3>
+                <div class="difficulty-options">
+                    <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-btn active" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+            
+            <div class="mouse-shake-settings">
+                <h3>Mouse Shake Intensity</h3>
+                <div class="slider-container">
+                    <input type="range" id="shakeIntensity" min="0" max="100" value="50" class="slider">
+                    <span class="slider-value" id="shakeValue">50%</span>
+                </div>
+            </div>
+
+            <div class="game-buttons">
+                <button id="startBtn" class="btn btn-primary">START GAME</button>
+                <button id="pauseBtn" class="btn btn-secondary" disabled>PAUSE</button>
+                <button id="resetBtn" class="btn btn-danger">RESET</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="game-over-screen">
+            <div class="game-over-content">
+                <h2>GAME OVER</h2>
+                <div class="final-stats">
+                    <div class="final-stat">
+                        <span class="final-label">Final Score:</span>
+                        <span class="final-value" id="finalScore">0</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="final-label">Accuracy:</span>
+                        <span class="final-value" id="finalAccuracy">0%</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="final-label">Targets Hit:</span>
+                        <span class="final-value" id="finalHits">0</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="final-label">Best Streak:</span>
+                        <span class="final-value" id="finalStreak">0</span>
+                    </div>
+                </div>
+                <div class="game-over-buttons">
+                    <button id="playAgainBtn" class="btn btn-primary">PLAY AGAIN</button>
+                    <button id="mainMenuBtn" class="btn btn-secondary">MAIN MENU</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="aim-script.js"></script>
+</body>
+</html>
